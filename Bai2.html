@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form id="input">
+    <label for="a">a:</label>
+    <input type="number" id="a" name="a" required>
+
+    <label for="b">b:</label>
+    <input type="number" name="b" id="b" required>
+
+    <label for="c">c:</label>
+    <input type="number" name="c" id="c" required>
+
+    <button type="button" onclick="soloveEquation()">giải phương trình</button>
+</form>
+<div id="result"></div>
+
+
+<script>
+    function solveQuadraticEquation(a, b, c) {
+        let delta = b * b - 4 * a * c;
+
+        if (delta > 0) {
+            // 2 nghiệm
+            let root1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let root2 = (-b - Math.sqrt(delta)) / (2 * a);
+            return [root1, root2];
+        } else if (delta === 0) {
+            // 1 nghiệm
+            let root = -b / (2 * a);
+            return [root];
+        } else {
+            // không có nghiệm
+            return [];
+        }
+    }
+
+    function soloveEquation() {
+        let a = parseFloat(document.getElementById('a').value);
+        let b = parseFloat(document.getElementById('b').value);
+        let c = parseFloat(document.getElementById('c').value);
+
+        //gọi hàm giải phương trình
+        let root = solveQuadraticEquation(a, b, c);
+
+        //hiển thị kết quả phương trình
+        let result = document.getElementById('result');
+        result.style.padding='10px';
+
+        if(root.length === 0){
+            result.innerText="phuong trinh khong co nghiem";
+        }else if(root.length === 1 ){
+            result.innerText="nghiem kep x = " + root[0];
+        }else{
+            result.innerText= "nghiem 1:x1 ="+root[0] + "\nnghiem 2: x2 = "+root[1];
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

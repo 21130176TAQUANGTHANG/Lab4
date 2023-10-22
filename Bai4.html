@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Đếm số lần xuất hiện</h2>
+
+<label for="textarea">Nhập đoạn văn (A):</label><br>
+<textarea id="textarea" rows="4" cols="50"></textarea><br>
+
+<label for="textfield">Nhập một dòng (B):</label><br>
+<input type="text" id="textfield"><br>
+
+<button onclick="countOccurrences()">Đếm</button>
+
+<div id="result"></div>
+
+<script>
+    function countOccurrences() {
+        // Lấy giá trị từ textarea và textfield
+        var textA = document.getElementById('textarea').value;
+        var textB = document.getElementById('textfield').value;
+
+        // Sử dụng regular expression để đếm số lần xuất hiện của B trong A
+        var count = (textA.match(new RegExp(textB, 'gi')) || []).length;
+
+        // Hiển thị kết quả lên trang web
+        var resultElement = document.getElementById('result');
+        resultElement.innerHTML = 'Số lần xuất hiện của "' + textB + '" trong đoạn văn là: ' + count;
+    }
+</script>
+
+</body>
+</html>

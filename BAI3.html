@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20vh 0;
+  }
+
+  #greeting {
+    font-size: 24px;
+    color: #333;
+  }
+</style>
+<body>
+<div id="greeting"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mảng các lời chào ngẫu nhiên
+    const greetings = [
+      'Chào bạn!',
+      'Xin chào!',
+      'Hi there!',
+      'Bonjour!',
+      '¡Hola!',
+      'Ciao!'
+    ];
+
+    // Lấy một lời chào ngẫu nhiên từ mảng
+    const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
+
+    // Hiển thị lời chào trên trang web
+    document.getElementById('greeting').innerText = randomGreeting;
+  });
+</script>
+
+</body>
+</html>

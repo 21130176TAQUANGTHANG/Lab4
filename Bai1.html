@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    button{
+        padding: 20px;
+        margin: 10px;
+    }
+    #btn1{
+        background-color: red;
+        border-radius: 10px;
+    }
+    #btn2{
+        background-color: blue;
+        border-radius: 10px;
+    }
+    #btn3{
+         background-color: yellow;
+         border-radius: 10px;
+    }
+
+    #btn4{
+          background-color: green;
+          border-radius: 10px;
+    }
+    #btn5{
+        background-color: rgb(128, 128, 128);
+        border-radius: 10px;
+    }
+
+</style>
+<body>
+<button id="btn1" onclick="changeColor('red')">Red</button>
+<button id="btn2" onclick="changeColor('blue')">Blue</button>
+<button id="btn3" onclick="changeColor('yellow')">Yellow</button>
+<button id="btn4" onclick="changeColor('green')">green</button>
+<button id="btn5" onclick="changeColor('gray')">Gray</button>
+
+<script>
+    function changeColor(color) {
+        document.body.style.backgroundColor=color;
+    }
+</script>
+
+</body>
+</html>
